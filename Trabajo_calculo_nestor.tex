@@ -1,0 +1,523 @@
+\documentclass[12pt, letterpaper]{article}
+
+% --- PAQUETES ---
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{graphicx}
+
+% --- CONFIGURACIÓN DE PÁGINA ---
+\geometry{a4paper, margin=1in}
+
+% --- INFORMACIÓN DEL DOCUMENTO ---
+\title{Solución de Problemas de Cálculo}
+\author{Resuelto por Gemini}
+\date{\today}
+
+% --- INICIO DEL DOCUMENTO ---
+\begin{document}
+
+\maketitle
+
+\section*{Resolución de los ejercicios}
+
+\subsection*{a) Ecuación de la recta tangente}
+\textbf{Problema:} Determine la ecuación de la recta tangente a la curva $y = \ln(x^2 - 3x + 1)$ en el punto $(3,0)$.
+
+\subsubsection*{Solución}
+Para encontrar la ecuación de la recta tangente, se siguen los siguientes pasos:
+
+\paragraph{1. Calcular la derivada de la función.}
+Se utiliza la regla de la cadena para derivar la función $y$ con respecto a $x$:
+$$
+\frac{dy}{dx} = \frac{d}{dx} \left( \ln(x^2 - 3x + 1) \right)
+$$
+La derivada es:
+$$
+\frac{dy}{dx} = \frac{1}{x^2 - 3x + 1} \cdot (2x - 3) = \frac{2x - 3}{x^2 - 3x + 1}
+$$
+
+\paragraph{2. Calcular la pendiente ($m$) en el punto de tangencia.}
+Se evalúa la derivada en la coordenada $x$ del punto dado, es decir, $x=3$:
+$$
+m = \frac{dy}{dx}\bigg|_{x=3} = \frac{2(3) - 3}{(3)^2 - 3(3) + 1} = \frac{6 - 3}{9 - 9 + 1} = \frac{3}{1} = 3
+$$
+
+\paragraph{3. Determinar la ecuación de la recta.}
+Se utiliza la forma punto-pendiente de la ecuación de una recta, $y - y_1 = m(x - x_1)$, con el punto $(x_1, y_1) = (3,0)$ y la pendiente $m=3$:
+$$
+y - 0 = 3(x - 3)
+$$
+Al simplificar, se obtiene la ecuación final:
+$$
+\mathbf{y = 3x - 9}
+$$
+
+\hrulefill
+\subsection*{Gráfica de las funciones}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Figure_2.png}
+    \caption{Derivada, Recta y Punto de tangencia}
+    \label{fig:Figure_2}
+\end{figure}
+
+
+
+
+\hrulefill
+\subsection*{b) Derivación logarítmica}
+\textbf{Problema:} Utilice la derivación logarítmica para hallar $y'$ si $x^y = y^x$.
+
+\subsubsection*{Solución}
+Para hallar la derivada $\frac{dy}{dx}$, se aplica el método de derivación logarítmica:
+
+\paragraph{1. Aplicar logaritmo natural.}
+Se toma el logaritmo natural en ambos lados de la ecuación original:
+$$
+\ln(x^y) = \ln(y^x)
+$$
+Aplicando la propiedad de los logaritmos $\ln(a^b) = b\ln(a)$, la ecuación se convierte en:
+$$
+y \ln(x) = x \ln(y)
+$$
+
+\paragraph{2. Diferenciar implícitamente con respecto a $x$.}
+Se deriva cada lado de la ecuación, aplicando la regla del producto:
+$$
+\frac{d}{dx}(y \ln(x)) = \frac{d}{dx}(x \ln(y))
+$$
+$$
+\frac{dy}{dx} \cdot \ln(x) + y \cdot \frac{1}{x} = 1 \cdot \ln(y) + x \cdot \frac{1}{y} \cdot \frac{dy}{dx}
+$$
+
+\paragraph{3. Despejar $\frac{dy}{dx}$.}
+Se agrupan todos los términos que contienen $\frac{dy}{dx}$ en un lado de la ecuación:
+$$
+\frac{dy}{dx} \ln(x) - \frac{x}{y} \frac{dy}{dx} = \ln(y) - \frac{y}{x}
+$$
+Se factoriza $\frac{dy}{dx}$:
+$$
+\frac{dy}{dx} \left( \ln(x) - \frac{x}{y} \right) = \ln(y) - \frac{y}{x}
+$$
+Finalmente, se resuelve para $\frac{dy}{dx}$:
+$$
+\frac{dy}{dx} = \frac{\ln(y) - \frac{y}{x}}{\ln(x) - \frac{x}{y}}
+$$
+
+\paragraph{4. Simplificar la expresión.}
+Para presentar el resultado de una forma más elegante, se simplifica la fracción compleja:
+$$
+\frac{dy}{dx} = \frac{\frac{x\ln(y) - y}{x}}{\frac{y\ln(x) - x}{y}} = \frac{y(x\ln(y) - y)}{x(y\ln(x) - x)}
+$$
+La derivada es:
+$$
+\mathbf{\frac{dy}{dx} = \frac{y(x\ln(y) - y)}{x(y\ln(x) - x)}}
+$$
+
+\section*{Análisis y Solución Matemática}
+
+La Ley de Boyle establece la relación entre la presión ($P$) y el volumen ($V$) de una muestra de gas a temperatura constante mediante la ecuación:
+$$
+PV = C
+$$
+donde $C$ es una constante.
+
+\subsection*{Datos del Problema}
+Se nos proporcionan los siguientes datos para un instante específico:
+\begin{itemize}
+    \item Volumen actual ($V$): $600 \text{ cm}^3$
+    \item Presión actual ($P$): $150 \text{ kPa}$
+    \item Razón de cambio de la presión ($\frac{dP}{dt}$): $+20 \text{ kPa/min}$ (El signo es positivo porque la presión se incrementa).
+\end{itemize}
+
+\subsection*{Objetivo}
+Se busca determinar la razón con la que el volumen del gas disminuye en ese mismo instante, es decir, encontrar el valor de $\frac{dV}{dt}$.
+
+\subsection*{Procedimiento}
+
+\paragraph{1. Calcular la constante C.}
+Utilizamos los valores del instante dado para determinar el valor de la constante $C$ para este sistema.
+$$
+C = P \cdot V = (150 \text{ kPa}) \cdot (600 \text{ cm}^3) = 90000 \text{ kPa} \cdot \text{cm}^3
+$$
+
+\paragraph{2. Diferenciar la Ley de Boyle con respecto al tiempo (t).}
+Para encontrar la relación entre las razones de cambio, derivamos la ecuación $PV = C$ de forma implícita. Se aplica la regla del producto en el lado izquierdo y la regla de la constante en el derecho.
+$$
+\frac{d}{dt}(PV) = \frac{d}{dt}(C)
+$$
+$$
+\frac{dP}{dt} \cdot V + P \cdot \frac{dV}{dt} = 0
+$$
+
+\paragraph{3. Sustituir los valores conocidos y resolver para $\frac{dV}{dt}$.}
+Sustituimos los datos del problema en la ecuación diferenciada que acabamos de obtener.
+$$
+(20 \text{ kPa/min}) \cdot (600 \text{ cm}^3) + (150 \text{ kPa}) \cdot \frac{dV}{dt} = 0
+$$
+Ahora, procedemos a despejar $\frac{dV}{dt}$:
+$$
+12000 \frac{\text{kPa} \cdot \text{cm}^3}{\text{min}} + 150 \text{ kPa} \cdot \frac{dV}{dt} = 0
+$$
+$$
+150 \text{ kPa} \cdot \frac{dV}{dt} = -12000 \frac{\text{kPa} \cdot \text{cm}^3}{\text{min}}
+$$
+$$
+\frac{dV}{dt} = \frac{-12000}{150} \frac{\text{cm}^3}{\text{min}}
+$$
+$$
+\frac{dV}{dt} = -80 \frac{\text{cm}^3}{\text{min}}
+$$
+
+\subsection*{Conclusión}
+El signo negativo de $\frac{dV}{dt}$ confirma que el volumen está disminuyendo. Por lo tanto, la respuesta a la pregunta es:
+\vspace{1cm}
+
+\begin{center}
+\Large \textbf{El volumen del gas disminuye a una razón de 80 cm³/min.}
+\end{center}
+
+\section*{Análisis y Solución Matemática}
+
+A continuación, se detalla el procedimiento para resolver el problema de razón de cambio.
+
+\subsection*{1. Datos y Relaciones Fundamentales}
+Primero, establecemos los datos proporcionados y las ecuaciones que rigen el sistema.
+
+\begin{itemize}
+    \item \textbf{Radio del recipiente (r):} El diámetro es de 60 cm, por lo que el radio es una constante:
+    $$r = \frac{60 \text{ cm}}{2} = 30 \text{ cm}$$
+
+    \item \textbf{Razón de cambio del volumen ($\frac{dV}{dt}$):} El flujo de entrada es de 2 L/min. Realizamos la conversión a cm³:
+    $$\frac{dV}{dt} = 2 \frac{\text{L}}{\text{min}} \times \frac{1000 \text{ cm}^3}{1 \text{ L}} = 2000 \frac{\text{cm}^3}{\text{min}}$$
+
+    \item \textbf{Fórmula del Volumen (V):} El volumen de agua a una altura $h$ en el recipiente hemisférico de radio $r$ es:
+    $$V = \pi \left(rh^2 - \frac{1}{3}h^3\right)$$
+    Sustituyendo el radio constante $r=30$:
+    $$V = \pi \left(30h^2 - \frac{1}{3}h^3\right)$$
+\end{itemize}
+
+\subsection*{2. Procedimiento de Solución}
+
+\paragraph{Paso 1: Encontrar la altura (h) cuando el recipiente está medio lleno.}
+Primero, se calcula el volumen total del hemisferio (cuando $h=r=30$):
+$$V_{total} = \pi \left(30(30)^2 - \frac{1}{3}(30)^3\right) = \pi(27000 - 9000) = 18000\pi \text{ cm}^3$$
+El volumen cuando está "medio lleno" es la mitad de este total:
+$$V_{medio} = \frac{1}{2} V_{total} = 9000\pi \text{ cm}^3$$
+Ahora, se encuentra la altura $h$ que corresponde a este volumen:
+$$9000\pi = \pi \left(30h^2 - \frac{1}{3}h^3\right)$$
+Simplificando, obtenemos la siguiente ecuación cúbica:
+$$h^3 - 90h^2 + 27000 = 0$$
+La solución de esta ecuación (restringida al dominio físico $0 < h < 30$) se encuentra por métodos numéricos y es:
+$$h \approx 19.58 \text{ cm}$$
+
+\paragraph{Paso 2: Relacionar las razones de cambio.}
+Se diferencia la ecuación del volumen con respecto al tiempo ($t$) para relacionar $\frac{dV}{dt}$ con $\frac{dh}{dt}$.
+$$\frac{d}{dt}(V) = \frac{d}{dt} \left[ \pi \left(30h^2 - \frac{1}{3}h^3\right) \right]$$
+Aplicando la regla de la cadena:
+$$\frac{dV}{dt} = \pi \left(60h \frac{dh}{dt} - h^2 \frac{dh}{dt}\right)$$
+$$\frac{dV}{dt} = \pi (60h - h^2) \frac{dh}{dt}$$
+
+\paragraph{Paso 3: Despejar y calcular $\frac{dh}{dt}$.}
+Se despeja $\frac{dh}{dt}$ y se sustituyen los valores conocidos ($\frac{dV}{dt} = 2000$ y $h \approx 19.58$).
+$$\frac{dh}{dt} = \frac{\frac{dV}{dt}}{\pi(60h - h^2)}$$
+$$\frac{dh}{dt} = \frac{2000}{\pi(60(19.58) - (19.58)^2)}$$
+$$\frac{dh}{dt} = \frac{2000}{\pi(1174.8 - 383.38)} = \frac{2000}{\pi(791.42)}$$
+$$\frac{dh}{dt} \approx 0.8044 \frac{\text{cm}}{\text{min}}$$
+
+\subsection*{3. Conclusión}
+El análisis de las razones de cambio nos lleva al resultado final.
+\vspace{1cm}
+
+\begin{center}
+\Large \textbf{La altura del agua aumenta a una razón de 0.8044 cm/min cuando el recipiente está medio lleno.}
+\end{center}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1.2\textwidth]{Figure_3.png}
+    \caption{Recipiente hemisférico}
+    \label{fig:Figure_2}
+\end{figure}
+
+\section*{Análisis de la Función $f(\theta) = 2\cos\theta + \cos^2\theta$}
+Analizaremos la función $f(\theta) = 2\cos\theta + \cos^2\theta$ en el intervalo cerrado $[0, \pi/2]$.
+
+\section*{a) Intervalos de Crecimiento y Decrecimiento}
+
+Para determinar dónde la función crece o decrece, necesitamos encontrar la primera derivada, $f'(\theta)$.
+
+\paragraph{Cálculo de la primera derivada:}
+Usando la regla de la cadena, obtenemos:
+\begin{align*}
+f'(\theta) &= \frac{d}{d\theta}(2\cos\theta + (\cos\theta)^2) \\
+&= -2\sin\theta + 2(\cos\theta)(-\sin\theta) \\
+&= -2\sin\theta - 2\sin\theta\cos\theta
+\end{align*}
+Factorizamos $-2\sin\theta$ para simplificar el análisis:
+$$ f'(\theta) = -2\sin\theta(1 + \cos\theta) $$
+
+\paragraph{Búsqueda de puntos críticos:}
+Los puntos críticos ocurren cuando $f'(\theta) = 0$ o no está definida. La función está definida en todo el intervalo.
+$$ -2\sin\theta(1 + \cos\theta) = 0 $$
+Esto implica que:
+\begin{itemize}
+    \item $\sin\theta = 0 \implies \theta = 0$ en nuestro intervalo $[0, \pi/2]$.
+    \item $1 + \cos\theta = 0 \implies \cos\theta = -1$, lo cual no tiene solución en $[0, \pi/2]$.
+\end{itemize}
+El único punto crítico se encuentra en el extremo del intervalo, en $\theta = 0$.
+
+\paragraph{Análisis de signos de $f'(\theta)$:}
+Para analizar el comportamiento de la función, evaluamos el signo de $f'(\theta)$ en el interior del intervalo, por ejemplo en $(0, \pi/2)$.
+\begin{itemize}
+    \item En $(0, \pi/2)$, el término $\sin\theta$ es siempre positivo.
+    \item En $(0, \pi/2)$, el término $\cos\theta$ es siempre positivo, por lo que $(1 + \cos\theta)$ también es positivo.
+\end{itemize}
+Por lo tanto, el signo de $f'(\theta) = -2(\text{positivo})(\text{positivo})$ es siempre negativo en $(0, \pi/2)$.
+
+\paragraph{Conclusión:}
+Como $f'(\theta) < 0$ para todo $\theta \in (0, \pi/2)$, la función es estrictamente decreciente en todo el intervalo.
+\begin{itemize}
+    \item \textbf{Intervalo donde decrece:} $[0, \pi/2]$
+    \item \textbf{Intervalo donde crece:} Ninguno.
+\end{itemize}
+
+
+\section*{b) Valores Máximos y Mínimos Locales}
+Dado que la función es continua y monótonamente decreciente en el intervalo cerrado $[0, \pi/2]$, los valores extremos absolutos (y únicos) se encontrarán en los extremos del intervalo.
+
+\begin{itemize}
+    \item El \textbf{valor máximo} ocurre en $\theta = 0$:
+    $$ f(0) = 2\cos(0) + \cos^2(0) = 2(1) + (1)^2 = 3 $$
+    \item El \textbf{valor mínimo} ocurre en $\theta = \pi/2$:
+    $$ f(\pi/2) = 2\cos(\pi/2) + \cos^2(\pi/2) = 2(0) + (0)^2 = 0 $$
+\end{itemize}
+No existen máximos o mínimos locales en el interior del intervalo.
+
+\section*{c) Intervalos de Concavidad y Puntos de Inflexión}
+Para el análisis de concavidad, calculamos la segunda derivada, $f''(\theta)$.
+
+\paragraph{Cálculo de la segunda derivada:}
+Partimos de $f'(\theta) = -2\sin\theta - 2\sin\theta\cos\theta = -2\sin\theta - \sin(2\theta)$.
+\begin{align*}
+f''(\theta) &= \frac{d}{d\theta}(-2\sin\theta - \sin(2\theta)) \\
+&= -2\cos\theta - \cos(2\theta) \cdot 2 \\
+&= -2\cos\theta - 2\cos(2\theta)
+\end{align*}
+Usamos la identidad del ángulo doble $\cos(2\theta) = 2\cos^2\theta - 1$:
+$$ f''(\theta) = -2\cos\theta - 2(2\cos^2\theta - 1) = -4\cos^2\theta - 2\cos\theta + 2 $$
+
+\paragraph{Búsqueda de posibles puntos de inflexión:}
+Igualamos $f''(\theta)$ a cero:
+$$ -4\cos^2\theta - 2\cos\theta + 2 = 0 $$
+Dividimos por -2:
+$$ 2\cos^2\theta + \cos\theta - 1 = 0 $$
+Sea $u = \cos\theta$. La ecuación se convierte en $2u^2 + u - 1 = 0$, que se factoriza como $(2u-1)(u+1) = 0$. Las soluciones son $u = 1/2$ y $u = -1$.
+\begin{itemize}
+    \item $\cos\theta = 1/2 \implies \theta = \pi/3$ en nuestro intervalo.
+    \item $\cos\theta = -1$, que no tiene solución en nuestro intervalo.
+\end{itemize}
+El único posible punto de inflexión es $\theta = \pi/3$.
+
+\paragraph{Análisis de signos de $f''(\theta)$:}
+Analizamos la concavidad en los intervalos $[0, \pi/3)$ y $(\pi/3, \pi/2]$.
+\begin{itemize}
+    \item Para $\theta \in [0, \pi/3)$, $\cos\theta > 1/2$. Tomemos $\theta = \pi/4$:
+    $f''(\pi/4) = -4\cos^2(\pi/4) - 2\cos(\pi/4) + 2 = -4(1/2) - 2(\sqrt{2}/2) + 2 = -\sqrt{2} < 0$.
+    La función es \textbf{cóncava hacia abajo}.
+    \item Para $\theta \in (\pi/3, \pi/2]$, $\cos\theta < 1/2$. Tomemos $\theta = \pi/2$:
+    $f''(\pi/2) = -4(0)^2 - 2(0) + 2 = 2 > 0$.
+    La función es \textbf{cóncava hacia arriba}.
+\end{itemize}
+
+\paragraph{Conclusión:}
+\begin{itemize}
+    \item \textbf{Intervalo cóncavo hacia abajo:} $[0, \pi/3]$
+    \item \textbf{Intervalo cóncavo hacia arriba:} $[\pi/3, \pi/2]$
+    \item Como la concavidad cambia en $\theta = \pi/3$, hay un \textbf{punto de inflexión}.
+    Calculamos su coordenada y:
+    $$ f(\pi/3) = 2\cos(\pi/3) + \cos^2(\pi/3) = 2(1/2) + (1/2)^2 = 1 + 1/4 = 5/4 $$
+    El punto de inflexión es \textbf{$(\pi/3, 5/4)$}.
+\end{itemize}
+
+\section*{d) Gráfica de la Función}
+Para visualizar la función $f(\theta) = 2\cos\theta + \cos$
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{Figure_4.png}
+    \caption{Análisis Gráfica}
+    \label{fig:Figure_2}
+\end{figure}
+
+\section*{Caso 1: Contenedor sin Tapa}
+Se busca minimizar el costo de los materiales para un contenedor rectangular con un volumen fijo de 10 m³. Se analizarán dos escenarios: uno sin tapa y otro con tapa, para luego comparar los resultados.
+
+
+
+\subsection*{Planteamiento de Ecuaciones}
+Sean $w$ el ancho, $l$ el largo y $h$ la altura del contenedor.
+\begin{itemize}
+    \item \textbf{Relación de la base:} $l = 2w$.
+    \item \textbf{Restricción de Volumen (V):} $V = lwh = 10$.
+\end{itemize}
+Sustituyendo la relación de la base en el volumen, obtenemos:
+$$ (2w)(w)h = 10 \implies 2w^2h = 10 $$
+De aquí, podemos expresar la altura $h$ en función del ancho $w$:
+$$ h = \frac{10}{2w^2} = \frac{5}{w^2} $$
+
+\subsection*{Función de Costo}
+El costo total ($C$) es la suma del costo de la base y el costo de los cuatro costados.
+\begin{itemize}
+    \item \textbf{Área de la base:} $A_{\text{base}} = lw = (2w)w = 2w^2$.
+    \item \textbf{Costo de la base:} $C_{\text{base}} = (10 \$/\text{m}^2) \cdot (2w^2 \text{ m}^2) = 20w^2 \$$.
+    \item \textbf{Área de los costados:} $A_{\text{costados}} = 2(wh) + 2(lh) = 2wh + 2(2w)h = 6wh$.
+    \item \textbf{Costo de los costados:} $C_{\text{costados}} = (6 \$/\text{m}^2) \cdot (6wh \text{ m}^2) = 36wh \$$.
+\end{itemize}
+La función de costo total es $C(w,h) = 20w^2 + 36wh$. Sustituimos $h = 5/w^2$ para obtener una función de una sola variable:
+$$ C(w) = 20w^2 + 36w\left(\frac{5}{w^2}\right) = 20w^2 + \frac{180}{w} $$
+
+\subsection*{Optimización por Cálculo}
+Para encontrar el costo mínimo, derivamos $C(w)$ e igualamos a cero.
+$$ C'(w) = \frac{d}{dw}\left(20w^2 + 180w^{-1}\right) = 40w - 180w^{-2} = 40w - \frac{180}{w^2} $$
+Igualando a cero:
+$$ 40w - \frac{180}{w^2} = 0 \implies 40w^3 = 180 \implies w^3 = 4.5 $$
+$$ w = \sqrt[3]{4.5} \approx 1.651 \text{ m} $$
+La segunda derivada, $C''(w) = 40 + 360/w^3$, es siempre positiva para $w>0$, lo que confirma que este punto es un mínimo.
+
+\subsection*{Resultados del Caso 1}
+Las dimensiones óptimas son:
+\begin{itemize}
+    \item Ancho: $w \approx 1.651$ m.
+    \item Largo: $l = 2w \approx 3.302$ m.
+    \item Altura: $h = 5/w^2 \approx 1.834$ m.
+\end{itemize}
+El costo mínimo es: $C(1.651) = 20(1.651)^2 + \frac{180}{1.651} \approx \textbf{\$163.54}$.
+
+\newpage
+
+\section*{Caso 2: Contenedor con Tapa}
+
+\subsection*{Función de Costo}
+Se añade el costo de una tapa fabricada con el material de los lados (\$6/m²).
+\begin{itemize}
+    \item \textbf{Área de la tapa:} $A_{\text{tapa}} = lw = 2w^2$.
+    \item \textbf{Costo de la tapa:} $C_{\text{tapa}} = (6 \$/\text{m}^2) \cdot (2w^2 \text{ m}^2) = 12w^2 \$$.
+\end{itemize}
+La nueva función de costo total $C_t(w)$ es:
+$$ C_t(w) = (\text{Costo sin tapa}) + (\text{Costo de la tapa}) = \left(20w^2 + \frac{180}{w}\right) + 12w^2 $$
+$$ C_t(w) = 32w^2 + \frac{180}{w} $$
+
+\subsection*{Optimización por Cálculo}
+Derivamos la nueva función $C_t(w)$ e igualamos a cero:
+$$ C_t'(w) = 64w - \frac{180}{w^2} $$
+$$ 64w - \frac{180}{w^2} = 0 \implies 64w^3 = 180 \implies w^3 = \frac{180}{64} = 2.8125 $$
+$$ w = \sqrt[3]{2.8125} \approx 1.412 \text{ m} $$
+La segunda derivada $C_t''(w) = 64 + 360/w^3$ también es siempre positiva.
+
+\subsection*{Resultados del Caso 2}
+Las nuevas dimensiones óptimas son:
+\begin{itemize}
+    \item Ancho: $w \approx 1.412$ m.
+    \item Largo: $l = 2w \approx 2.824$ m.
+    \item Altura: $h = 5/w^2 \approx 2.505$ m.
+\end{itemize}
+El costo mínimo es: $C_t(1.412) = 32(1.412)^2 + \frac{180}{1.412} \approx \textbf{\$191.30}$.
+
+\section*{Justificación y Comparación Final}
+
+\subsection*{Respuesta a la Pregunta}
+No, el costo de los materiales que hacen más barato el contenedor \textbf{no es el mismo} en ambos escenarios. Los cálculos demuestran que el costo mínimo y las dimensiones óptimas cambian al añadir la tapa.
+
+\subsection*{Tabla Comparativa}
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Característica} & \textbf{Contenedor sin Tapa} & \textbf{Contenedor con Tapa} \\
+\hline
+Ancho ($w$) & $\approx 1.651$ m & $\approx 1.412$ m \\
+Largo ($l$) & $\approx 3.302$ m & $\approx 2.824$ m \\
+Altura ($h$) & $\approx 1.834$ m & $\approx 2.505$ m \\
+\hline
+\textbf{Costo Mínimo} & \textbf{\$163.54} & \textbf{\$191.30} \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{Justificación}
+Las dimensiones cambian porque la función de costo se modifica. En el segundo caso, el costo total de las superficies horizontales (base a \$10/m² y tapa a \$6/m²) tiene un mayor peso relativo en el costo total. Para minimizarlo, el diseño óptimo reduce el área de estas superficies (disminuyendo $w$ y $l$) y compensa el volumen perdido aumentando la altura $h$.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{Figure_5.png}
+    \caption{Diagramas de contenedores}
+    \label{fig:Figure_2}
+\end{figure}
+
+
+\section*{Optimización: Volumen Máximo de un Cilindro en una Esfera}
+
+Se busca encontrar las dimensiones del cilindro de mayor volumen posible que puede ser inscrito en una esfera de radio constante $r$.
+
+Sean $x$ el radio del cilindro y $h$ su altura. El volumen del cilindro, que deseamos maximizar, es:
+$$ V = \pi x^2 h $$
+Esta función depende de dos variables, $x$ y $h$. Necesitamos una ecuación de restricción para relacionarlas.
+
+\begin{center}
+    % Este es un placeholder. En un documento real, aquí iría una imagen.
+    \textit{[Diagrama de un corte transversal mostrando un rectángulo (cilindro) inscrito en un círculo (esfera)]}
+\end{center}
+
+Al observar un corte transversal, se forma un triángulo rectángulo con el centro de la esfera, un punto en el borde de la base del cilindro y el centro de la base del cilindro. Los lados de este triángulo son:
+\begin{itemize}
+    \item Hipotenusa: El radio de la esfera, $r$.
+    \item Un cateto: El radio del cilindro, $x$.
+    \item Otro cateto: La mitad de la altura del cilindro, $h/2$.
+\end{itemize}
+
+\section*{2. Ecuación de Restricción}
+Aplicando el Teorema de Pitágoras a este triángulo, obtenemos nuestra ecuación de restricción:
+$$ x^2 + \left(\frac{h}{2}\right)^2 = r^2 \implies x^2 + \frac{h^2}{4} = r^2 $$
+De esta ecuación, es conveniente despejar $x^2$:
+$$ x^2 = r^2 - \frac{h^2}{4} $$
+
+\section*{3. Optimización de la Función de Volumen}
+Sustituimos la expresión para $x^2$ en la fórmula del volumen para obtener una función de una sola variable, $h$:
+$$ V(h) = \pi \left(r^2 - \frac{h^2}{4}\right) h = \pi \left(r^2h - \frac{h^3}{4}\right) $$
+El dominio físico para la altura es $0 < h < 2r$. Para encontrar el volumen máximo, derivamos $V(h)$ con respecto a $h$ e igualamos a cero.
+$$ V'(h) = \frac{d}{dh} \left[ \pi \left(r^2h - \frac{h^3}{4}\right) \right] = \pi \left(r^2 - \frac{3h^2}{4}\right) $$
+Igualando a cero para encontrar los puntos críticos:
+$$ \pi \left(r^2 - \frac{3h^2}{4}\right) = 0 \implies r^2 = \frac{3h^2}{4} $$
+$$ 4r^2 = 3h^2 \implies h^2 = \frac{4r^2}{3} \implies h = \sqrt{\frac{4r^2}{3}} = \frac{2r}{\sqrt{3}} = \frac{2\sqrt{3}r}{3} $$
+Para verificar que este valor corresponde a un máximo, usamos el criterio de la segunda derivada:
+$$ V''(h) = \frac{d}{dh} \left[ \pi \left(r^2 - \frac{3h^2}{4}\right) \right] = \pi \left(-\frac{6h}{4}\right) = -\frac{3\pi h}{2} $$
+Como $h$ es una altura, $h>0$, por lo que $V''(h)$ es siempre negativa. Esto confirma que hemos encontrado un máximo.
+
+\section*{4. Conclusión y Resultados}
+Hemos encontrado la altura óptima del cilindro. Ahora encontramos el radio óptimo $x$ usando la ecuación de restricción:
+$$ x^2 = r^2 - \frac{h^2}{4} = r^2 - \frac{1}{4}\left(\frac{4r^2}{3}\right) = r^2 - \frac{r^2}{3} = \frac{2r^2}{3} $$
+$$ x = \sqrt{\frac{2r^2}{3}} = \frac{\sqrt{2}r}{\sqrt{3}} = \frac{\sqrt{6}r}{3} $$
+Finalmente, el volumen máximo es:
+$$ V_{\text{max}} = \pi x^2 h = \pi \left(\frac{2r^2}{3}\right) \left(\frac{2r}{\sqrt{3}}\right) = \frac{4\pi r^3}{3\sqrt{3}} = \frac{4\sqrt{3}\pi r^3}{9} $$
+
+\vspace{0.5cm}
+
+\textbf{Resumen de las dimensiones del cilindro de volumen máximo:}
+\begin{itemize}
+    \item \textbf{Altura:} $h = \frac{2\sqrt{3}r}{3}$
+    \item \textbf{Radio:} $x = \frac{\sqrt{6}r}{3}$
+    \item \textbf{Volumen Máximo:} $V = \frac{4\sqrt{3}\pi r^3}{9}$
+\end{itemize}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figure_7.png}
+    \caption{Cilindro y esfera}
+    \label{fig:Figure_2}
+\end{figure}
+
+
+
+\end{document}
