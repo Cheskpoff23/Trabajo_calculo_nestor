@@ -4,24 +4,21 @@
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{geometry}
 \usepackage{graphicx}
 
 % --- CONFIGURACIÓN DE PÁGINA ---
-\geometry{a4paper, margin=1in}
+\geometry{letterpaper, margin=1in}
 
-% --- INFORMACIÓN DEL DOCUMENTO ---
-\title{Solución de Problemas de Cálculo}
-\author{Resuelto por Gemini}
-\date{\today}
+
 
 % --- INICIO DEL DOCUMENTO ---
 \begin{document}
 
-\maketitle
 
 \section*{Resolución de los ejercicios}
-
+\section*{1.}
 \subsection*{a) Ecuación de la recta tangente}
 \textbf{Problema:} Determine la ecuación de la recta tangente a la curva $y = \ln(x^2 - 3x + 1)$ en el punto $(3,0)$.
 
@@ -45,16 +42,15 @@ m = \frac{dy}{dx}\bigg|_{x=3} = \frac{2(3) - 3}{(3)^2 - 3(3) + 1} = \frac{6 - 3}
 $$
 
 \paragraph{3. Determinar la ecuación de la recta.}
-Se utiliza la forma punto-pendiente de la ecuación de una recta, $y - y_1 = m(x - x_1)$, con el punto $(x_1, y_1) = (3,0)$ y la pendiente $m=3$:
+Se utiliza la forma punto-pendiente de la ecuación de una recta, $y - y_1 = m(x - x_1)$, con el punto $(x_1, y_1) = (3,0)$ y la pendiente encontrada anteriormente $m=3$:
 $$
 y - 0 = 3(x - 3)
 $$
-Al simplificar, se obtiene la ecuación final:
+Simplificamos la expresión y obtenemos la ecuación de la recta tangente al punto que deseamos:
 $$
 \mathbf{y = 3x - 9}
 $$
 
-\hrulefill
 \subsection*{Gráfica de las funciones}
 \begin{figure}[h]
     \centering
@@ -63,12 +59,9 @@ $$
     \label{fig:Figure_2}
 \end{figure}
 
-
-
-
-\hrulefill
+\newpage
 \subsection*{b) Derivación logarítmica}
-\textbf{Problema:} Utilice la derivación logarítmica para hallar $y'$ si $x^y = y^x$.
+\textbf{Problema:} Utilice la derivación logarítmica para hallar $y'$ si $x^y = y^x$. Según la sección 3.6, pagina 220. Stewart, 8va edición.
 
 \subsubsection*{Solución}
 Para hallar la derivada $\frac{dy}{dx}$, se aplica el método de derivación logarítmica:
@@ -83,7 +76,7 @@ $$
 y \ln(x) = x \ln(y)
 $$
 
-\paragraph{2. Diferenciar implícitamente con respecto a $x$.}
+\paragraph{2. Derivar implícitamente con respecto a $x$.}
 Se deriva cada lado de la ecuación, aplicando la regla del producto:
 $$
 \frac{d}{dx}(y \ln(x)) = \frac{d}{dx}(x \ln(y))
@@ -92,7 +85,7 @@ $$
 \frac{dy}{dx} \cdot \ln(x) + y \cdot \frac{1}{x} = 1 \cdot \ln(y) + x \cdot \frac{1}{y} \cdot \frac{dy}{dx}
 $$
 
-\paragraph{3. Despejar $\frac{dy}{dx}$.}
+\paragraph{3. Agrupamos $\frac{dy}{dx}$.}
 Se agrupan todos los términos que contienen $\frac{dy}{dx}$ en un lado de la ecuación:
 $$
 \frac{dy}{dx} \ln(x) - \frac{x}{y} \frac{dy}{dx} = \ln(y) - \frac{y}{x}
@@ -106,8 +99,8 @@ $$
 \frac{dy}{dx} = \frac{\ln(y) - \frac{y}{x}}{\ln(x) - \frac{x}{y}}
 $$
 
-\paragraph{4. Simplificar la expresión.}
-Para presentar el resultado de una forma más elegante, se simplifica la fracción compleja:
+\paragraph{4. Simplificamos}
+
 $$
 \frac{dy}{dx} = \frac{\frac{x\ln(y) - y}{x}}{\frac{y\ln(x) - x}{y}} = \frac{y(x\ln(y) - y)}{x(y\ln(x) - x)}
 $$
@@ -116,7 +109,7 @@ $$
 \mathbf{\frac{dy}{dx} = \frac{y(x\ln(y) - y)}{x(y\ln(x) - x)}}
 $$
 
-\section*{Análisis y Solución Matemática}
+\section*{2.}
 
 La Ley de Boyle establece la relación entre la presión ($P$) y el volumen ($V$) de una muestra de gas a temperatura constante mediante la ecuación:
 $$
@@ -129,22 +122,21 @@ Se nos proporcionan los siguientes datos para un instante específico:
 \begin{itemize}
     \item Volumen actual ($V$): $600 \text{ cm}^3$
     \item Presión actual ($P$): $150 \text{ kPa}$
-    \item Razón de cambio de la presión ($\frac{dP}{dt}$): $+20 \text{ kPa/min}$ (El signo es positivo porque la presión se incrementa).
+    \item Razón de cambio de la presión ($\frac{dP}{dt}$): $+20 \text{ kPa/min}$ 
 \end{itemize}
 
 \subsection*{Objetivo}
 Se busca determinar la razón con la que el volumen del gas disminuye en ese mismo instante, es decir, encontrar el valor de $\frac{dV}{dt}$.
 
-\subsection*{Procedimiento}
+\subsection*{Solución}
 
 \paragraph{1. Calcular la constante C.}
-Utilizamos los valores del instante dado para determinar el valor de la constante $C$ para este sistema.
 $$
 C = P \cdot V = (150 \text{ kPa}) \cdot (600 \text{ cm}^3) = 90000 \text{ kPa} \cdot \text{cm}^3
 $$
 
 \paragraph{2. Diferenciar la Ley de Boyle con respecto al tiempo (t).}
-Para encontrar la relación entre las razones de cambio, derivamos la ecuación $PV = C$ de forma implícita. Se aplica la regla del producto en el lado izquierdo y la regla de la constante en el derecho.
+Para encontrar la relación entre las razones de cambio, derivamos la ecuación $PV = C$ de forma implícita.
 $$
 \frac{d}{dt}(PV) = \frac{d}{dt}(C)
 $$
@@ -153,7 +145,6 @@ $$
 $$
 
 \paragraph{3. Sustituir los valores conocidos y resolver para $\frac{dV}{dt}$.}
-Sustituimos los datos del problema en la ecuación diferenciada que acabamos de obtener.
 $$
 (20 \text{ kPa/min}) \cdot (600 \text{ cm}^3) + (150 \text{ kPa}) \cdot \frac{dV}{dt} = 0
 $$
@@ -172,46 +163,75 @@ $$
 $$
 
 \subsection*{Conclusión}
-El signo negativo de $\frac{dV}{dt}$ confirma que el volumen está disminuyendo. Por lo tanto, la respuesta a la pregunta es:
+El signo negativo de $\frac{dV}{dt}$ confirma que el volumen está disminuyendo. Por lo tanto, la respuesta a la pregunta es que el volumen del gas disminuye a una razón de 80 cm³/min.
 \vspace{1cm}
 
-\begin{center}
-\Large \textbf{El volumen del gas disminuye a una razón de 80 cm³/min.}
-\end{center}
+\section*{3.}
 
-\section*{Análisis y Solución Matemática}
-
-A continuación, se detalla el procedimiento para resolver el problema de razón de cambio.
-
-\subsection*{1. Datos y Relaciones Fundamentales}
+\subsection*{1. Datos}
 Primero, establecemos los datos proporcionados y las ecuaciones que rigen el sistema.
 
 \begin{itemize}
-    \item \textbf{Radio del recipiente (r):} El diámetro es de 60 cm, por lo que el radio es una constante:
+    \item \textbf{Radio del recipiente (r):} El diámetro es de 60 cm, por lo que el radio es:
     $$r = \frac{60 \text{ cm}}{2} = 30 \text{ cm}$$
 
-    \item \textbf{Razón de cambio del volumen ($\frac{dV}{dt}$):} El flujo de entrada es de 2 L/min. Realizamos la conversión a cm³:
+    \item \textbf{Razón de cambio del volumen ($\frac{dV}{dt}$):} El flujo de entrada es de 2 L/min. Realizamos la conversión a cm³ (Esto para manipular las derivadas en las mismas unidades):
     $$\frac{dV}{dt} = 2 \frac{\text{L}}{\text{min}} \times \frac{1000 \text{ cm}^3}{1 \text{ L}} = 2000 \frac{\text{cm}^3}{\text{min}}$$
 
     \item \textbf{Fórmula del Volumen (V):} El volumen de agua a una altura $h$ en el recipiente hemisférico de radio $r$ es:
     $$V = \pi \left(rh^2 - \frac{1}{3}h^3\right)$$
-    Sustituyendo el radio constante $r=30$:
+    Sustituyendo el radio $r=30$:
     $$V = \pi \left(30h^2 - \frac{1}{3}h^3\right)$$
 \end{itemize}
 
 \subsection*{2. Procedimiento de Solución}
 
-\paragraph{Paso 1: Encontrar la altura (h) cuando el recipiente está medio lleno.}
-Primero, se calcula el volumen total del hemisferio (cuando $h=r=30$):
-$$V_{total} = \pi \left(30(30)^2 - \frac{1}{3}(30)^3\right) = \pi(27000 - 9000) = 18000\pi \text{ cm}^3$$
-El volumen cuando está "medio lleno" es la mitad de este total:
-$$V_{medio} = \frac{1}{2} V_{total} = 9000\pi \text{ cm}^3$$
-Ahora, se encuentra la altura $h$ que corresponde a este volumen:
-$$9000\pi = \pi \left(30h^2 - \frac{1}{3}h^3\right)$$
-Simplificando, obtenemos la siguiente ecuación cúbica:
-$$h^3 - 90h^2 + 27000 = 0$$
-La solución de esta ecuación (restringida al dominio físico $0 < h < 30$) se encuentra por métodos numéricos y es:
-$$h \approx 19.58 \text{ cm}$$
+El volumen total del recipiente (una esfera completa) se calcula cuando la altura es igual al diámetro, $h=2R=60$. Como indicaste, esto es:
+\begin{align*}
+    V_{\text{total}} &= \pi \left( 30(60)^2 - \frac{1}{3}(60)^3 \right) \\
+    &= \pi \left( 30(3600) - \frac{1}{3}(216000) \right) \\
+    &= \pi (108000 - 72000) \\
+    &= 36000\pi \text{ cm}^3
+\end{align*}
+El volumen cuando el recipiente está ``medio lleno'' es la mitad de este total:
+$$ V_{\text{medio}} = \frac{1}{2} V_{\text{total}} = \frac{1}{2}(36000\pi) = 18000\pi \text{ cm}^3 $$
+
+\section*{Paso 2: Solución de la Ecuación para la Altura $h$}
+
+Ahora, buscamos la altura $h$ que corresponde a este volumen medio. Planteamos la ecuación:
+$$ 18000\pi = \pi \left( 30h^2 - \frac{1}{3}h^3 \right) $$
+Dividimos por $\pi$ en ambos lados y reorganizamos la ecuación:
+\begin{align*}
+    18000 &= 30h^2 - \frac{1}{3}h^3 \\
+    54000 &= 90h^2 - h^3 \quad (\text{Multiplicando por 3}) \\
+    h^3 - 90h^2 + 54000 &= 0
+\end{align*}
+Esta es la ecuación cúbica que debemos resolver.
+
+
+\section*{Paso 3: Búsqueda de Raíces}
+Para resolver la ecuación cúbica, buscamos una raíz por inspección. Probamos con $h=30$ (la mitad de la altura total):
+$$ (30)^3 - 90(30)^2 + 54000 = 27000 - 90(900) + 54000 = 27000 - 81000 + 54000 = 0 $$
+Dado que $h=30$ es una raíz, $(h-30)$ es un factor del polinomio. Usamos división sintética para encontrar los otros factores:
+$$ \begin{array}{c|cccc} 30 & 1 & -90 & 0 & 54000 \\ & & 30 & -1800 & -54000 \\ \hline & 1 & -60 & -1800 & 0 \\ \end{array} $$
+La ecuación se factoriza como:
+$$ (h-30)(h^2 - 60h - 1800) = 0 $$
+Resolvemos el factor cuadrático $h^2 - 60h - 1800 = 0$ con la fórmula general:
+\begin{align*}
+    h &= \frac{-(-60) \pm \sqrt{(-60)^2 - 4(1)(-1800)}}{2(1)} \\
+    &= \frac{60 \pm \sqrt{3600 + 7200}}{2} = \frac{60 \pm \sqrt{10800}}{2} \\
+    &= \frac{60 \pm \sqrt{3600 \cdot 3}}{2} = \frac{60 \pm 60\sqrt{3}}{2} = 30 \pm 30\sqrt{3}
+\end{align*}
+Las tres raíces matemáticas son $h_1 = 30$, $h_2 = 30 + 30\sqrt{3} \approx 81.96$ y $h_3 = 30 - 30\sqrt{3} \approx -21.96$.
+
+\textbf{Análisis Físico:} La altura $h$ debe estar dentro del rango físico del recipiente, $0 \le h \le 60$.
+\begin{itemize}
+    \item $h_2 \approx 81.96$ está fuera del rango.
+    \item $h_3 \approx -21.96$ no tiene sentido físico.
+    \item La única solución válida es $h=30$.
+\end{itemize}
+La altura del agua cuando el recipiente esférico está medio lleno es de \textbf{30 cm}.
+
 
 \paragraph{Paso 2: Relacionar las razones de cambio.}
 Se diferencia la ecuación del volumen con respecto al tiempo ($t$) para relacionar $\frac{dV}{dt}$ con $\frac{dh}{dt}$.
@@ -221,19 +241,15 @@ $$\frac{dV}{dt} = \pi \left(60h \frac{dh}{dt} - h^2 \frac{dh}{dt}\right)$$
 $$\frac{dV}{dt} = \pi (60h - h^2) \frac{dh}{dt}$$
 
 \paragraph{Paso 3: Despejar y calcular $\frac{dh}{dt}$.}
-Se despeja $\frac{dh}{dt}$ y se sustituyen los valores conocidos ($\frac{dV}{dt} = 2000$ y $h \approx 19.58$).
+Se despeja $\frac{dh}{dt}$ y se sustituyen los valores conocidos ($\frac{dV}{dt} = 2000$ y $h = 30$).
 $$\frac{dh}{dt} = \frac{\frac{dV}{dt}}{\pi(60h - h^2)}$$
-$$\frac{dh}{dt} = \frac{2000}{\pi(60(19.58) - (19.58)^2)}$$
-$$\frac{dh}{dt} = \frac{2000}{\pi(1174.8 - 383.38)} = \frac{2000}{\pi(791.42)}$$
-$$\frac{dh}{dt} \approx 0.8044 \frac{\text{cm}}{\text{min}}$$
+$$\frac{dh}{dt} = \frac{2000}{\pi(60(30) - (30)^2)}$$
+$$\frac{dh}{dt} = \frac{2000}{\pi(1800 - 900)} = \frac{2000}{\pi(900)}$$
+$$\frac{dh}{dt} \approx 0.707 \frac{\text{cm}}{\text{min}}$$
 
 \subsection*{3. Conclusión}
-El análisis de las razones de cambio nos lleva al resultado final.
+El análisis de las razones de cambio nos lleva al resultado final. La altura del agua aumenta a una razón de 0.707 cm/min cuando el recipiente está medio lleno.
 \vspace{1cm}
-
-\begin{center}
-\Large \textbf{La altura del agua aumenta a una razón de 0.8044 cm/min cuando el recipiente está medio lleno.}
-\end{center}
 
 \begin{figure}[h!]
     \centering
@@ -241,7 +257,7 @@ El análisis de las razones de cambio nos lleva al resultado final.
     \caption{Recipiente hemisférico}
     \label{fig:Figure_2}
 \end{figure}
-
+\section*{4.}
 \section*{Análisis de la Función $f(\theta) = 2\cos\theta + \cos^2\theta$}
 Analizaremos la función $f(\theta) = 2\cos\theta + \cos^2\theta$ en el intervalo cerrado $[0, \pi/2]$.
 
@@ -351,7 +367,137 @@ Para visualizar la función $f(\theta) = 2\cos\theta + \cos$
     \caption{Análisis Gráfica}
     \label{fig:Figure_2}
 \end{figure}
+\section*{5.}
+\section*{a. Análisis de $f(x) = \frac{2x^2}{x^2-1}$}
+\begin{enumerate}
+    \item[\textbf{A.}] \textbf{Dominio:} La función no está definida cuando el denominador es cero, es decir, $x^2-1=0 \implies x=\pm1$.
+    \[ D_f = \{x \in \mathbb{R} | x \neq \pm 1\} = (-\infty, -1) \cup (-1, 1) \cup (1, \infty) \]
 
+    \item[\textbf{B.}] \textbf{Intersecciones:}
+    \begin{itemize}
+        \item \textbf{Eje y:} $f(0) = \frac{2(0)^2}{0^2-1} = 0$. El punto es $(0,0)$.
+        \item \textbf{Eje x:} $f(x) = 0 \implies 2x^2 = 0 \implies x=0$. El punto es $(0,0)$.
+    \end{itemize}
+
+    \item[\textbf{C.}] \textbf{Simetría:} $f(-x) = \frac{2(-x)^2}{(-x)^2-1} = \frac{2x^2}{x^2-1} = f(x)$. La función es \textbf{par} y simétrica respecto al eje y.
+
+    \item[\textbf{D.}] \textbf{Asíntotas:}
+    \begin{itemize}
+        \item \textbf{Horizontales:} $\lim_{x\to\pm\infty} \frac{2x^2}{x^2-1} = \lim_{x\to\pm\infty} \frac{2}{1 - 1/x^2} = 2$. La asíntota horizontal es $y=2$.
+        \item \textbf{Verticales:} En $x=1$ y $x=-1$.
+        $$ \lim_{x\to1^+} f(x) = \infty, \quad \lim_{x\to1^-} f(x) = -\infty $$
+        $$ \lim_{x\to-1^+} f(x) = -\infty, \quad \lim_{x\to-1^-} f(x) = \infty $$
+    \end{itemize}
+
+    \item[\textbf{E.}] \textbf{Crecimiento y Decrecimiento:}
+    $$ f'(x) = \frac{4x(x^2-1) - 2x^2(2x)}{(x^2-1)^2} = \frac{-4x}{(x^2-1)^2} $$
+    \begin{itemize}
+        \item Creciente ($f'(x)>0$): $(-\infty, -1) \cup (-1, 0)$.
+        \item Decreciente ($f'(x)<0$): $(0, 1) \cup (1, \infty)$.
+    \end{itemize}
+
+    \item[\textbf{F.}] \textbf{Extremos Locales:} El único número crítico es $x=0$. Como $f'$ cambia de $+$ a $-$ en $x=0$, hay un \textbf{máximo local} en el punto $(0, f(0)) = (0,0)$.
+
+    \item[\textbf{G.}] \textbf{Concavidad:}
+    $$ f''(x) = \frac{-4(x^2-1)^2 - (-4x) \cdot 2(x^2-1)(2x)}{(x^2-1)^4} = \frac{12x^2+4}{(x^2-1)^3} $$
+    \begin{itemize}
+        \item Cóncava hacia arriba ($f''(x)>0$): $(-\infty, -1) \cup (1, \infty)$.
+        \item Cóncava hacia abajo ($f''(x)<0$): $(-1, 1)$.
+    \end{itemize}
+    No hay puntos de inflexión ya que $x=\pm1$ no están en el dominio.
+
+    \item[\textbf{H.}] \textbf{Gráfica:} Se traza una curva simétrica al eje y con asíntotas en $y=2$, $x=1$ y $x=-1$. La curva pasa por $(0,0)$ como un máximo local, es creciente hasta $x=0$ y decreciente después, con la concavidad cambiando en las asíntotas verticales.
+\end{enumerate}
+\begin{figure}[ht]
+    \includegraphics
+    [width=1\textwidth]{Figure_9.png}
+    \caption{Gráfica de $f(x) = \frac{2x^2}{x^2-1}$}
+    \label{fig:Figure_1}
+\end{figure}
+\newpage
+\section*{b. Análisis de $f(x) = xe^x$}
+\begin{enumerate}
+    \item[\textbf{A.}] \textbf{Dominio:} $D_f = \mathbb{R}$.
+
+    \item[\textbf{B.}] \textbf{Intersecciones:} $f(x)=0 \implies xe^x = 0 \implies x=0$. La única intersección es en el origen, $(0,0)$.
+
+    \item[\textbf{C.}] \textbf{Simetría:} La función no es par ni impar.
+
+    \item[\textbf{D.}] \textbf{Asíntotas:}
+    \begin{itemize}
+        \item $\lim_{x\to\infty} xe^x = \infty$. No hay asíntota horizontal a la derecha.
+        \item $\lim_{x\to-\infty} xe^x = \lim_{x\to-\infty} \frac{x}{e^{-x}} \overset{L'H}{=} \lim_{x\to-\infty} \frac{1}{-e^{-x}} = 0$. La asíntota horizontal es $y=0$ (a la izquierda).
+    \end{itemize}
+
+    \item[\textbf{E.}] \textbf{Crecimiento y Decrecimiento:}
+    $$ f'(x) = 1 \cdot e^x + x \cdot e^x = (x+1)e^x $$
+    \begin{itemize}
+        \item Creciente ($f'(x)>0$): $(-1, \infty)$.
+        \item Decreciente ($f'(x)<0$): $(-\infty, -1)$.
+    \end{itemize}
+
+    \item[\textbf{F.}] \textbf{Extremos Locales:} El número crítico es $x=-1$. Como $f'$ cambia de $-$ a $+$ en $x=-1$, hay un \textbf{mínimo local (y absoluto)} en el punto $(-1, f(-1)) = (-1, -e^{-1})$. Punto exacto: $(-1, -1/e)$.
+
+    \item[\textbf{G.}] \textbf{Concavidad:}
+    $$ f''(x) = 1 \cdot e^x + (x+1)e^x = (x+2)e^x $$
+    \begin{itemize}
+        \item Cóncava hacia arriba ($f''(x)>0$): $(-2, \infty)$.
+        \item Cóncava hacia abajo ($f''(x)<0$): $(-\infty, -2)$.
+    \end{itemize}
+    Hay un cambio de concavidad en $x=-2$. El \textbf{punto de inflexión} es $(-2, f(-2)) = (-2, -2e^{-2})$. Punto exacto: $(-2, -2/e^2)$.
+
+    \item[\textbf{H.}] \textbf{Gráfica:} La curva viene desde la asíntota $y=0$ a la izquierda, decrece hasta el mínimo en $(-1, -1/e)$, y luego crece indefinidamente. La concavidad cambia de hacia abajo a hacia arriba en el punto de inflexión $(-2, -2/e^2)$.
+\end{enumerate}
+\begin{figure}[ht]
+    \includegraphics
+    [width=1\textwidth]{Figure_10.png}
+    \caption{Gráfica de $f(x) = xe^x$}
+    \label{fig:Figure_1}
+\end{figure}
+\newpage
+
+\section*{c. Análisis de $f(x) = \ln(4-x^2)$}
+\begin{enumerate}
+    \item[\textbf{A.}] \textbf{Dominio:} Se necesita $4-x^2 > 0 \implies x^2 < 4 \implies |x| < 2$.
+    $$ D_f = (-2, 2) $$
+
+    \item[\textbf{B.}] \textbf{Intersecciones:}
+    \begin{itemize}
+        \item \textbf{Eje y:} $f(0) = \ln(4)$. Punto exacto: $(0, \ln(4))$.
+        \item \textbf{Eje x:} $\ln(4-x^2) = 0 \implies 4-x^2 = 1 \implies x^2 = 3 \implies x = \pm\sqrt{3}$. Puntos exactos: $(\sqrt{3}, 0)$ y $(-\sqrt{3}, 0)$.
+    \end{itemize}
+    
+    \item[\textbf{C.}] \textbf{Simetría:} $f(-x) = \ln(4-(-x)^2) = \ln(4-x^2) = f(x)$. La función es \textbf{par} y simétrica respecto al eje y.
+
+    \item[\textbf{D.}] \textbf{Asíntotas:}
+    \begin{itemize}
+        \item \textbf{Verticales:} En los extremos del dominio, $x=2$ y $x=-2$.
+        $$ \lim_{x\to2^-} \ln(4-x^2) = -\infty, \quad \lim_{x\to-2^+} \ln(4-x^2) = -\infty $$
+    \end{itemize}
+
+    \item[\textbf{E.}] \textbf{Crecimiento y Decrecimiento:}
+    $$ f'(x) = \frac{-2x}{4-x^2} $$
+    \begin{itemize}
+        \item Creciente ($f'(x)>0$): $(-2, 0)$.
+        \item Decreciente ($f'(x)<0$): $(0, 2)$.
+    \end{itemize}
+
+    \item[\textbf{F.}] \textbf{Extremos Locales:} El número crítico es $x=0$. Como $f'$ cambia de $+$ a $-$ en $x=0$, hay un \textbf{máximo local} en el punto $(0, f(0))$. Punto exacto: $(0, \ln(4))$.
+
+    \item[\textbf{G.}] \textbf{Concavidad:}
+    $$ f''(x) = \frac{-2(4-x^2) - (-2x)(-2x)}{(4-x^2)^2} = \frac{-8-2x^2}{(4-x^2)^2} = \frac{-2(4+x^2)}{(4-x^2)^2} $$
+    Como $f''(x) < 0$ para todo $x$ en el dominio, la función es siempre \textbf{cóncava hacia abajo} en $(-2, 2)$. No hay puntos de inflexión.
+
+    \item[\textbf{H.}] \textbf{Gráfica:} La curva es una forma de campana invertida, simétrica respecto al eje y. Está contenida entre sus asíntotas verticales $x=-2$ y $x=2$. Alcanza su punto más alto en el máximo local $(0, \ln(4))$ y cruza el eje x en $\pm\sqrt{3}$.
+\end{enumerate}
+\begin{figure}[ht]
+    \includegraphics
+    [width=1\textwidth]{Figure_11.png}
+    \caption{Gráfica de $f(x) = \ln(4-x^2)$}
+    \label{fig:Figure_1}
+\end{figure}
+\newpage
+\section*{6.}
 \section*{Caso 1: Contenedor sin Tapa}
 Se busca minimizar el costo de los materiales para un contenedor rectangular con un volumen fijo de 10 m³. Se analizarán dos escenarios: uno sin tapa y otro con tapa, para luego comparar los resultados.
 
@@ -374,7 +520,7 @@ El costo total ($C$) es la suma del costo de la base y el costo de los cuatro co
     \item \textbf{Área de la base:} $A_{\text{base}} = lw = (2w)w = 2w^2$.
     \item \textbf{Costo de la base:} $C_{\text{base}} = (10 \$/\text{m}^2) \cdot (2w^2 \text{ m}^2) = 20w^2 \$$.
     \item \textbf{Área de los costados:} $A_{\text{costados}} = 2(wh) + 2(lh) = 2wh + 2(2w)h = 6wh$.
-    \item \textbf{Costo de los costados:} $C_{\text{costados}} = (6 \$/\text{m}^2) \cdot (6wh \text{ m}^2) = 36wh \$$.
+    \item \textbf{Costo de los costados:} $C_{\text{costados}} = (6 \$/\text{m}^2) \cdot (6w \cdot h \text{ m}^2) = 36w \cdot h \$$.
 \end{itemize}
 La función de costo total es $C(w,h) = 20w^2 + 36wh$. Sustituimos $h = 5/w^2$ para obtener una función de una sola variable:
 $$ C(w) = 20w^2 + 36w\left(\frac{5}{w^2}\right) = 20w^2 + \frac{180}{w} $$
@@ -455,8 +601,7 @@ Las dimensiones cambian porque la función de costo se modifica. En el segundo c
     \caption{Diagramas de contenedores}
     \label{fig:Figure_2}
 \end{figure}
-
-
+\section*{7.}
 \section*{Optimización: Volumen Máximo de un Cilindro en una Esfera}
 
 Se busca encontrar las dimensiones del cilindro de mayor volumen posible que puede ser inscrito en una esfera de radio constante $r$.
@@ -465,10 +610,6 @@ Sean $x$ el radio del cilindro y $h$ su altura. El volumen del cilindro, que des
 $$ V = \pi x^2 h $$
 Esta función depende de dos variables, $x$ y $h$. Necesitamos una ecuación de restricción para relacionarlas.
 
-\begin{center}
-    % Este es un placeholder. En un documento real, aquí iría una imagen.
-    \textit{[Diagrama de un corte transversal mostrando un rectángulo (cilindro) inscrito en un círculo (esfera)]}
-\end{center}
 
 Al observar un corte transversal, se forma un triángulo rectángulo con el centro de la esfera, un punto en el borde de la base del cilindro y el centro de la base del cilindro. Los lados de este triángulo son:
 \begin{itemize}
@@ -518,6 +659,8 @@ $$ V_{\text{max}} = \pi x^2 h = \pi \left(\frac{2r^2}{3}\right) \left(\frac{2r}{
     \label{fig:Figure_2}
 \end{figure}
 
-
+\begin{thebibliography}{9}
+\bibitem{stewart8} Stewart, J. (2016). \textit{Cálculo de una variable: Trascendentes tempranas}. 8va edición. Cengage Learning.
+\end{thebibliography}
 
 \end{document}
